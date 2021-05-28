@@ -54,9 +54,9 @@ const AppTopBar = ({ user, userManager }) => {
                 appColor="grey"
                 appLogo={
                     theme === LIGHT_THEME ? (
-                        <PowsyblLogo /> //GridXXXLogoLight
+                        <PowsyblLogo /> //GridCapaLogoLight
                     ) : (
-                        <PowsyblLogo /> //GridXXXLogoDark
+                        <PowsyblLogo /> //GridCapaLogoDark
                     )
                 }
                 onParametersClick={() => setShowParameters(true)}

@@ -18,18 +18,3 @@ jobs:
                   npm run-script test
                   npm run-script build
                   npm run-script test
-
-            - name: Build and publish Docker image
-              if: github.ref == 'refs/heads/master'
-              uses: elgohr/Publish-Docker-Github-Action@master
-              with:
-                  name: gridsuite/gridXXX-app
-                  username: gridsuiteci
-                  password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-            - name: Broadcast update event
-              if: github.ref == 'refs/heads/master'
-              uses: gridsuite/broadcast-event@master
-              with:
-                  token: ${{ secrets.REPO_ACCESS_TOKEN }}
-                  event-type: gridXXX_app_updated
